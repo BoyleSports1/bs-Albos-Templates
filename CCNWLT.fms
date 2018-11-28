@@ -1,0 +1,146 @@
+;	compiled 1st July 2004 by James Donovan
+;	copyright Alphameric Leisure Ltd.
+
+
+     	HEAD  0
+	FMT_TYPE	52
+
+
+	SUBR	22
+		SCREEN    1
+		POSN	1,1
+		RGB	0,59,53
+		RECTANGLE	512,512
+		POSN	1,1
+		BITMAP	' ccnwlt.TGA'
+	SUBRX
+
+	SUBR	23
+		SCREEN    1
+		POSN	1,1
+		RGB	0,59,53
+		RECTANGLE	512,512
+		POSN	1,1
+		BITMAP	' ccnwl1.TGA'
+	SUBRX
+	
+	SUBR	24
+		SCREEN    1
+		POSN	1,1
+		RGB	0,59,53
+		RECTANGLE	512,512
+		POSN	1,1
+		BITMAP	' ccnwl2.TGA'
+	SUBRX
+	
+	NOFIELD					
+	NOFIELD
+	NOFIELD   
+
+;;;;;;;;;;;;;;;;;;;;;;;;  TEXT FONT  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	SUBR	300							; ADJUST THE WIDTH OF THE FONT
+		FONT	'ARIAL',BOLD,STANDARD,55,14		; FOR 0-18 CHAR DOG NAMES
+	SUBRX
+
+	SUBR	301
+		FONT	'ARIAL',BOLD,STANDARD,50,12		; FOR 19-30 CHAR DOG NAMES
+	SUBRX
+
+;;;;;;;;;;;;;;;;;;;;;;;;  TEXT FONT  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	SUBR	23
+
+ 		          					 
+    POSN	220,25
+                  					 ; MESSAGE 2
+		FIELD               					 
+		IFSIZEIS	0,18,300	
+		IFSIZEIS	19,30,301
+		SCREEN	1
+		RGBTEXT	255,255,255
+	    ENDF_CLIP	70,310,TRUE,LEFT
+
+	POSN	290,25
+                  					 ; MESSAGE 3
+		FIELD               					 
+		IFSIZEIS	0,18,300	
+		IFSIZEIS	19,30,301
+		SCREEN	1
+		RGBTEXT	255,255,255
+	    ENDF_CLIP	70,300,TRUE,LEFT   
+
+	NOFIELD						; MESSAGE 4    	              					 
+
+	NOFIELD						; MESSAGE 5    	
+
+
+
+	FIELD
+		SCREEN	6
+			TRANSITION_T
+		SCREEN	5
+			TRANSITION_T
+		SCREEN	4
+			TRANSITION_T
+		SCREEN	3
+			TRANSITION_T
+		SCREEN	2
+			TRANSITION_T
+		SCREEN	1
+			TRANSITION_T
+
+	ENDFX
+	SUBRX
+
+
+	SUBR	21						; 12 X SCROLL REGIONS
+	
+	
+
+	NOFIELD				;SCROLL FIELD 1
+	NOFIELD				;SCROLL FIELD 2
+	NOFIELD				;SCROLL FIELD 3
+	NOFIELD				;SCROLL FIELD 4
+	NOFIELD				;SCROLL FIELD 5
+	NOFIELD				;SCROLL FIELD 6
+	NOFIELD				;SCROLL FIELD 7
+	NOFIELD				;SCROLL FIELD 8
+	NOFIELD				;SCROLL FIELD 9
+    NOFIELD             ;SCROLL FIELD 10
+    NOFIELD             ;SCROLL FIELD 11
+	NOFIELD				;SCROLL FIELD 12
+	SUBRX
+	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODIFIERS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	SUBR	200			;  
+    	NOFIELD           			; MODIFIER
+		CSUB	22		; BACKGROUND
+		CSUB	23		; M1 - M6
+		CSUB	21		; SCROLL 1 - 12
+	SUBRX
+
+	SUBR	201			;  
+    	NOFIELD           			; MODIFIER
+		CSUB	23		; BACKGROUND
+		CSUB	23		; M1 - M6
+		CSUB	21		; SCROLL 1 - 12
+	SUBRX
+	
+	SUBR	202			;  
+    	NOFIELD           			; MODIFIER
+		CSUB	24		; BACKGROUND
+		CSUB	23		; M1 - M6
+		CSUB	21		; SCROLL 1 - 12
+	SUBRX
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; INITIAL INSTRUCTIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	SCREEN	1
+	POSN	1,1
+	RGB	255,0,0
+	RECTANGLE	512,512
+	CSUBM	200
+
+TAIL
+END
