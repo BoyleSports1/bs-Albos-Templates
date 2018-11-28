@@ -1,0 +1,260 @@
+;	compiled 1st July by James Donovan
+;	copyright Alphameric Leisure Ltd.
+
+
+     	HEAD  0
+	FMT_TYPE	52
+
+
+
+
+	SUBR	19
+    SCREEN    4
+	POSN	1,1
+	RGB	0,59,53
+	RECTANGLE	512,512
+	POSN	1,1
+	BITMAP	'FOOTAC.TGA'
+    SCREEN    3
+	POSN	1,1
+	RGB	0,59,53
+	RECTANGLE	512,512
+	POSN	1,1
+	BITMAP	'FOOTAC.TGA'
+
+
+    SCREEN    2
+	POSN	1,1
+	RGB	0,59,53
+	RECTANGLE	512,512
+	POSN	1,1
+	BITMAP	'FOOTAC.TGA'
+
+
+    SCREEN    1
+	POSN	1,1
+	RGB	0,59,53
+	RECTANGLE	512,512
+	POSN	1,1
+	BITMAP	'FOOTAC.TGA'
+
+	SUBRX
+
+
+	SUBR	20
+    		NOFIELD					; MESSAGE 1
+
+		
+    		
+    	FIELD						; MESSAGE 2
+	RGB	0,51,102
+	RGBTEXT	255,204,51
+	FONT	'IMPACT',NORMAL,ITALIC,57,25	
+	POSN	1,1
+	RECTANGLE	57,500
+	POSN	1,1
+   	ENDF_CLIP	57,500,TRUE,CENTRE          			
+    	
+	FIELD						; MESSAGE 3
+	RGB	0,51,102
+	RGBTEXT	255,255,255
+	FONT	'ARIAL BLACK',NORMAL,STANDARD,55,14
+	POSN	442,160
+	RECTANGLE	55,70
+	POSN	442,160
+   	ENDF_CLIP	55,70,TRUE,CENTRE          	
+    	NOFIELD               					 ; MESSAGE 4
+    	NOFIELD               					 ; MESSAGE 5
+    	
+	FIELD           		;MESSAGE 6
+
+		SCREEN	6
+			TRANSITION_T
+		SCREEN	5
+			TRANSITION_T
+		SCREEN	4
+			TRANSITION_T
+		SCREEN	3
+			TRANSITION_T
+		SCREEN	2
+			TRANSITION_T
+		SCREEN	1
+			TRANSITION_T
+
+	ENDFX
+	SUBRX
+
+	SUBR	21						; 12 X SCROLL REGIONS
+
+	
+	NOFIELD				;SCROLL FIELD 1
+	NOFIELD				;SCROLL FIELD 2
+	NOFIELD				;SCROLL FIELD 3
+	NOFIELD				;SCROLL FIELD 4
+	NOFIELD				;SCROLL FIELD 5
+	NOFIELD				;SCROLL FIELD 6
+	NOFIELD				;SCROLL FIELD 7
+	NOFIELD				;SCROLL FIELD 8
+	NOFIELD				;SCROLL FIELD 9
+	NOFIELD				;SCROLL FIELD 10
+	NOFIELD				;SCROLL FIELD 11
+	NOFIELD				;SCROLL FIELD 12
+	SUBRX
+
+	RGB	255,0,0
+
+    	
+
+    	SUBR    2				; 1 BOX		
+		FONT	'IMPACT',BOLD,STANDARD,42,12
+	RGBTEXT	0,31,81
+	RPOS	0,10
+	FIELD
+	ENDF_CLIP	42,200,TRUE,CENTRE
+
+   	NOFIELD					; ODDS 1
+   	
+   	NOFIELD					; ODDS 2
+   	
+	NOFIELD					; ODDS 3
+    	SUBRX
+
+
+	SUBR    3				; 1 BOX		
+		FONT	'IMPACT',BOLD,STANDARD,42,12
+	RGBTEXT	0,31,81
+	RPOS	0,5
+	FIELD
+	ENDF_CLIP	42,210,TRUE,CENTRE
+	
+   	NOFIELD					; ODDS 1
+   	
+   	NOFIELD					; ODDS 2
+   	
+	NOFIELD					; ODDS 3
+    	SUBRX
+
+
+	SUBR    4				; 1 BOX		
+		FONT	'IMPACT',BOLD,STANDARD,42,12
+	RGBTEXT	0,31,81
+	RPOS	0,5
+	FIELD
+	ENDF_CLIP	42,80,TRUE,CENTRE
+	
+   	NOFIELD					; ODDS 1
+   	
+   	NOFIELD					; ODDS 2
+   	
+	NOFIELD					; ODDS 3
+    	SUBRX
+
+   
+
+	SUBR	60				; FOR MODIFIER 0
+   	NOFIELD        				; PLACE ODDS				
+		POSN 120,10
+		CSUB	3
+		X    SET   192        ; MATCH NAMES
+   		REPT    5
+   		POSN    X,15
+    		CSUB    2
+		X    SET    X+44
+    		ENDM
+		POSN 452,50
+		CSUB	4
+
+		POSN 120,280
+		CSUB	3
+		X    SET    192       ; MATCH NAMES
+   		REPT    5
+   		POSN    X,285
+    		CSUB    2
+		X    SET    X+44
+    		ENDM
+		POSN 452,380
+		CSUB	4
+
+	SCREEN	2
+		X    SET   120        ; MATCH NAMES
+   		REPT    6
+   		POSN    X,20
+    		CSUB    2
+		X    SET    X+50
+    		ENDM
+
+		X    SET    120        ; MATCH NAMES
+   		REPT    6
+   		POSN    X,240
+    		CSUB    2
+		X    SET    X+50
+    		ENDM
+	SCREEN	3
+		X    SET   120        ; MATCH NAMES
+   		REPT    6
+   		POSN    X,20
+    		CSUB    2
+		X    SET    X+50
+    		ENDM
+
+		X    SET    120        ; MATCH NAMES
+   		REPT    6
+   		POSN    X,240
+    		CSUB    2
+		X    SET    X+50
+    		ENDM
+	SCREEN	4
+		X    SET   120        ; MATCH NAMES
+   		REPT    6
+   		POSN    X,20
+    		CSUB    2
+		X    SET    X+50
+    		ENDM
+
+		X    SET    120        ; MATCH NAMES
+   		REPT    6
+   		POSN    X,240
+    		CSUB    2
+		X    SET    X+50
+    		ENDM
+
+	SUBRX
+
+	
+
+	SUBR	200			;  
+    	NOFIELD           			; MODIFIER
+		CSUB	19		; BACKGROUND
+		CSUB	20		; M1 - M6
+		CSUB	21		; SCROLL 1 - 12
+		CSUB	60
+		SUBRX
+
+	
+
+
+		SUBR	100			; DEFAULT
+    	NOFIELD           	 ;	CONTROL FIELD
+    	NOFIELD           	 ;	FORMAT FILE
+		CSUBM	200
+		SUBRX
+
+
+		SUBR	109
+		CSUB	100
+		SUBRX
+
+
+	SCREEN	1
+	POSN	1,1
+	RGB	255,0,0
+	RECTANGLE	512,512
+	CSUBM	100
+    	TAIL
+    	END
+
+
+
+
+
+    ;
