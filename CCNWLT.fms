@@ -115,7 +115,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODIFIERS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	SUBR	200			;  
-    	NOFIELD           			; MODIFIERr
+    	NOFIELD           			; MODIFIER
 		CSUB	22		; BACKGROUND
 		CSUB	23		; M1 - M6
 		CSUB	21		; SCROLL 1 - 12
