@@ -1,0 +1,31 @@
+.backgroundImage1{
+	width:960px;
+	height:540px;
+	background-image: url("Images/crossbar-cc_mod0.png");
+}
+.backgroundImage2{
+	width:960px;
+	height:540px;
+	background-image: url("Images/crossbar-cc_mod1.png");
+}
+	
+/*/////////////////////////////////////////////////////////////////////////*/
+
+.selectionName{
+	position:absolute;
+	left:242px;
+	font-size:50px;
+	letter-spacing:-1.3px;
+	color: #FFF;
+	width: 700px;
+	text-align: left;
+}		
+
+.dateStation{
+	position:absolute;
+	right: 36px;
+	font-size:19px;
+	color: #FFF;
+	width: 700px;
+	text-align: right;
+}		
